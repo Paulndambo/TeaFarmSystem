@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="main-content">
+  <section class="wrapper">
+    <!--overview start-->
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
+        <ol class="breadcrumb">
+          <li><i class="fa fa-home"></i><a href="/">Home</a></li>
+          <li><i class="fa fa-laptop"></i>Farmers</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="table-responsive">
+          <section class="panel">
+            <header class="panel-heading">
+              Farmer's List | <span class="ml-5"><a href="#myModal" data-toggle="modal" class="btn btn-primary">Add Delivery</a></span>
+            </header>
+            <table class="table ml-3">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>ID Number</th>
+                  <th>Gender</th>
+                  <th>Phone Number</th>
+                  <th>Date Joined</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+        {% for farmer in object_list %}
+                <tr>
+                  <td>{{farmer.user.first_name}} {{farmer.user.last_name}}</td>
+                  <td>{{farmer.id_number}}</td>
+                  <td>{{farmer.gender}}</td>
+                  <td>{{farmer.phone_number}}</td>
+                  <td>{{farmer.join_date}}</td>
+                  <td>
+                    <a href="{% url 'farmer-details' farmer.pk %}" class="btn btn-primary">Details</a>
+                  </td>
+                  <td>
+                    <a href="{% url 'update-farmer' farmer.pk %}" class="btn btn-secondary">Edit</a>
+                  </td>
+                  <td>
+                    <a href="{% url 'delete-farmer' farmer.pk %}" class="btn btn-danger">Delete!</a>
+                  </td>
+                </tr>
+      {% endfor %}
+              </tbody>
+            </table>
+          </section>
+        </div>
+
+      </div>
+  </section>
+</section>
+{% endblock content %}

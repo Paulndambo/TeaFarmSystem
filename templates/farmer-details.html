@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-user-md"></i> Profile</h3>
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="{% url 'farmers' %}">Farmers List</a></li>
+              <li><i class="fa fa-pencil"></i><a href="{% url 'update-farmer' farmer.pk %}">Update Profile</a></li>
+              <li><i class="fa fa-user-md"></i>Profile</li>
+            </ol>
+          </div>
+        </div>
+        <div class="row">
+<section>
+  <div id="profile" class="tab-pane">
+    <section class="panel">
+      <div class="panel-body bio-graph-info">
+        <h1>Bio Graph</h1>
+        <div class="row">
+          <div class="bio-row">
+            <p><span>First Name </span>: {{farmer.user.first_name}} </p>
+          </div>
+          <div class="bio-row">
+            <p><span>Last Name </span>: {{farmer.user.last_name}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>National ID </span>: {{farmer.id_number}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Date Joined</span>: {{farmer.date_joined}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Postal Code </span>: {{farmer.postal_code}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>City </span>: {{farmer.town}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Username </span>: {{farmer.user.username}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Email </span>:{{farmer.user.email}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Mobile </span>: {{farmer.phone_number}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Gender </span>: {{farmer.gender}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+  </section>
+</section>
+
+{% endblock content %}

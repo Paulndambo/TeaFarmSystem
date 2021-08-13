@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-user-md"></i> Profile</h3>
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="{% url 'staff' %}">Staff List</a></li>
+              <li><i class="fa fa-pencil"></i><a href="{% url 'update-staff' staff.pk %}">Update Profile</a></li>
+              <li><i class="fa fa-user-md"></i>Profile</li>
+            </ol>
+          </div>
+        </div>
+        <div class="row">
+<section>
+  <div id="profile" class="tab-pane">
+    <section class="panel">
+      <div class="panel-body bio-graph-info">
+        <h1>Bio Graph</h1>
+        <div class="row">
+          <div class="bio-row">
+            <p><span>First Name </span>: {{staff.user.first_name}} </p>
+          </div>
+          <div class="bio-row">
+            <p><span>Last Name </span>: {{staff.user.last_name}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>National ID </span>: {{staff.id_number}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Shift </span>: {{staff.shift}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Date Employed</span>: {{staff.employment_date}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Postal Code </span>: {{staff.postal_code}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>City </span>: {{staff.town}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Region/State </span>: {{staff.county_or_state_or_region}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Country </span>: {{staff.country}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Position </span>: {{staff.position}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Email </span>:{{staff.user.email}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Mobile </span>: {{staff.phone_number}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Gender </span>: {{staff.gender}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+  </section>
+</section>
+
+{% endblock content %}
